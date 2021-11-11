@@ -52,12 +52,20 @@ const Stopwatch = () => {
   }
 
 
+  const resetHandler = () => {
+    setTime(new Date(0, 0, 0))
+    setIsOn(true)
+  }
+
+
 
   return (
     <article>
       <h1>{format(time, 'HH:mm:ss')}</h1>
       <button onClick={startStopHandler}>  {isOn ? "Stop" : "Start"} </button>
       <button onClick={waitHandler}>Wait</button>
+      <button onClick={resetHandler}>Reset</button>
+
 
 
     </article>
