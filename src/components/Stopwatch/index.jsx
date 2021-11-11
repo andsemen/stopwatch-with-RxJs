@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { format, addSeconds } from 'date-fns';
 import { fromEvent, interval, debounceTime, filter, buffer, map } from 'rxjs';
+import styles from "./stopwatch.module.scss"
+import StopwatchBtns from '../StopwatchBtns';
 
 
 
@@ -22,7 +24,7 @@ const Stopwatch = () => {
   }, [isOn]);
 
   const startStopHandler = () => {
-    
+
     if (isOn) {
       setTime(new Date(0, 0, 0))
     }
@@ -60,15 +62,15 @@ const Stopwatch = () => {
 
 
   return (
-    <article>
-      <h1>{format(time, 'HH:mm:ss')}</h1>
-      <button onClick={startStopHandler}>  {isOn ? "Stop" : "Start"} </button>
-      <button onClick={waitHandler}>Wait</button>
-      <button onClick={resetHandler}>Reset</button>
+    <div className={styles.container}>
+      <h1 className={styles.heading}>Stopwatch</h1>
+      <div className={styles.timer}> 
+      {format(time, 'HH:mm:ss')}
+      </div>
 
+      <StopwatchBtns startStopHandler={startStopHandler} isOn={isOn} waitHandler={waitHandler} resetHandler={resetHandler} />
 
-
-    </article>
+    </div>
   );
 }
 

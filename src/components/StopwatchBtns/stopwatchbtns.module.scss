@@ -1,0 +1,72 @@
+
+.btnRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  color: #2c3e50;
+  padding: 10px 20px;
+  font-size: 30px;
+  width: 150px;
+}
+
+.start {
+  border: 2px solid #2c3e50;;
+    &:hover {
+      background: #59bd4b;
+      transition: 500ms;
+      border: 2px solid #59bd4b;
+      color: #fff;
+      cursor: pointer;
+  }
+    &:active {
+      background: #226b18
+    }
+}
+
+.stop {
+  border: 2px solid #2c3e50;;
+  &:hover {
+    background: rgb(245, 72, 72);
+    transition: 500ms;
+
+    border: 2px solid rgb(245, 72, 72);
+    color: #fff;
+    cursor: pointer;
+  }
+  &:active {
+    background: rgb(133, 15, 15)
+  }
+}
+
+.wait {
+  border: 2px solid #2c3e50;
+  &:hover {
+    background: rgb(199, 141, 74);
+    transition: 500ms;
+
+    border: 2px solid rgb(199, 141, 74);
+    color: #fff;
+    cursor: pointer;
+  }
+  &:active {
+    background: rgb(102, 66, 25)
+  }
+}
+
+
+.reset {
+  border: 2px solid #2c3e50;;
+  &:hover {
+    background: rgb(63, 49, 187);
+    transition: 500ms;
+
+    border: 2px solid rgb(63, 49, 187);
+    color: #fff;
+    cursor: pointer;
+  }
+  &:active {
+    background: rgb(63, 49, 187);
+  }
+}
