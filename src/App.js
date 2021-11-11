@@ -1,8 +1,9 @@
+import Stopwatch from "./components/Stopwatch";
 
 function App() {
   return (
-    <div className="App">
- 
+    <div>
+      <Stopwatch />
     </div>
   );
 }
