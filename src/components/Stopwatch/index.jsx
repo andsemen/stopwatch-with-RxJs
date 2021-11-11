@@ -32,12 +32,33 @@ const Stopwatch = () => {
 
 
 
+  const waitHandler = ({ target }) => {
+
+    const clickEvent = fromEvent(target, 'click')
+
+    const doubleClick = clickEvent.pipe(
+      buffer(clickEvent.pipe(
+        debounceTime(300),
+      )),
+      map(list => {
+        return list.length;
+      }),
+      filter(x => x === 2),
+    )
+
+    doubleClick.subscribe(() => {
+      setIsOn(false)
+    })
+  }
+
 
 
   return (
     <article>
       <h1>{format(time, 'HH:mm:ss')}</h1>
       <button onClick={startStopHandler}>  {isOn ? "Stop" : "Start"} </button>
+      <button onClick={waitHandler}>Wait</button>
+
 
     </article>
   );
