@@ -7,9 +7,9 @@ import StopwatchBtns from '../StopwatchBtns';
 
 
 const Stopwatch = () => {
-
   const [time, setTime] = useState(new Date(0, 0, 0))
   const [isOn, setIsOn] = useState(false)
+
 
   useEffect(() => {
 
@@ -24,18 +24,14 @@ const Stopwatch = () => {
   }, [isOn]);
 
   const startStopHandler = () => {
-
     if (isOn) {
       setTime(new Date(0, 0, 0))
     }
-
     setIsOn(!isOn)
   }
 
 
-
   const waitHandler = ({ target }) => {
-
     const clickEvent = fromEvent(target, 'click')
 
     const doubleClick = clickEvent.pipe(
@@ -59,13 +55,11 @@ const Stopwatch = () => {
     setIsOn(true)
   }
 
-
-
   return (
     <div className={styles.container}>
       <h1 className={styles.heading}>Stopwatch</h1>
-      <div className={styles.timer}> 
-      {format(time, 'HH:mm:ss')}
+      <div className={styles.timer}>
+        {format(time, 'HH:mm:ss')}
       </div>
 
       <StopwatchBtns startStopHandler={startStopHandler} isOn={isOn} waitHandler={waitHandler} resetHandler={resetHandler} />
